@@ -43,9 +43,9 @@ public class ServletConfirmadorIdade extends HttpServlet {
 		response.getWriter().write("	</head>");
 		response.getWriter().write("	<body>");
 		if(idade == idadeConfirmada) {
-			response.getWriter().write("		<h2>As idade são iguais!</h2>");
+			response.getWriter().write("		<h2>As idades são iguais!</h2>");
 		} else {
-			response.getWriter().write("		<h2>As idade NÃO são iguais!</h2>");
+			response.getWriter().write("		<h2>As idades NÃO são iguais!</h2>");
 		}
 		response.getWriter().write("	</body>");
 		response.getWriter().write("</html>");

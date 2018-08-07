@@ -1,22 +1,40 @@
 <%@page import="java.util.Calendar"%>
 <%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="ISO-8859-1">
-		<title>Java EE</title>
-	</head>
-	<body>
+<head>
+<meta charset="ISO-8859-1">
+<title>Java EE</title>
+</head>
+<body>
 	<!-- diretiva include -->
-	<%@include file="menu.jsp" %>
+	<%@include file="menu.jsp"%>
+	<fildset style="width: 200px">
+	<form method="post" action="infoUsuario.jsp">
+		<legend>Informações do usuário</legend>
+		<div style="font-weight: bold">Nome completo:</div>
+		<div>
+			<input type="text" name="nomeCompleto">
+		</div>
+		<div style="font-weight: bold">Nome de usuário:</div>
+		<div>
+			<input type="text" name="nomeUsuario">
+		</div>
+		<div style="font-weight: bold">Senha:</div>
+		<div>
+			<input type="password" name="senha">
+		</div>
+		<div>
+			<input type="submit" valuer="Enviar" />
+		</div>
+	</form>
+	</fildset>
 	<!--  declaração -->
-	<%!
-		public String getDataAtual(){
+	<%!public String getDataAtual() {
 		return new Date().toString();
-	}
-	%>
+	}%>
 	<h1>Curso de Java Intermediário</h1>
 	<!-- scriptlets -->
 	<%
@@ -25,16 +43,18 @@
 		out.println(mensagem);
 	%>
 	<!-- expressão -->
-	<p>A data atual é <%=getDataAtual()%></p>
+	<p>
+		A data atual é
+		<%=getDataAtual()%></p>
 	<%
 		//executando estuturas de repetição em scriptlet
 		String tabela = "";
 		tabela = "<table>";
-		for(int i = 0;i<=10;i++){
+		for (int i = 0; i <= 10; i++) {
 			int resultado = 2 + i;
 			tabela += "<tr>";
 			tabela += "	<td>";
-			tabela += "2 x "+i+" = ";
+			tabela += "2 x " + i + " = ";
 			tabela += "	</td>";
 			tabela += "	<td>";
 			tabela += resultado;
@@ -48,18 +68,18 @@
 		//executando estruturas de decisão
 		Calendar data = Calendar.getInstance();
 		int hora = data.get(Calendar.HOUR_OF_DAY);
-		if(hora >=6 && hora <=12){
+		if (hora >= 6 && hora <= 12) {
 			out.println("Bom dia!!");
-		} else if(hora >12 && hora<=18){
+		} else if (hora > 12 && hora <= 18) {
 			out.println("Boa tarde!!");
-		} else if (hora>18 && hora<=24){
+		} else if (hora > 18 && hora <= 24) {
 			out.println("Boa noite!!");
-		} else{
+		} else {
 			out.println("Boa madrugada!!");
 		}
 		//switch
-		int mes = data.get(Calendar.MONTH)+1;
-		switch(mes){
+		int mes = data.get(Calendar.MONTH) + 1;
+		switch (mes) {
 		case 1:
 			out.println("É Janeiro.");
 			break;
@@ -98,5 +118,5 @@
 			break;
 		}
 	%>
-	</body>
+</body>
 </html>

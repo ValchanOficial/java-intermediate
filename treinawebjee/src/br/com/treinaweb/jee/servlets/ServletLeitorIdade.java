@@ -1,6 +1,8 @@
 package br.com.treinaweb.jee.servlets;
 
 import java.io.IOException;
+import java.util.Enumeration;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -37,6 +39,7 @@ public class ServletLeitorIdade extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int idade = Integer.parseInt(request.getParameter("idade"));
 		contexto.setAttribute("idadeUsuario", idade);
+		Enumeration<String> cabecalhoHttp = request.getHeaderNames();
 		response.getWriter().write("<html>");
 		response.getWriter().write("	<head>");
 		response.getWriter().write("		<title>Verificação da Idade</title>");
@@ -53,6 +56,23 @@ public class ServletLeitorIdade extends HttpServlet {
 		response.getWriter().write("		  	</tr>");
 		response.getWriter().write("		  </table>");
 		response.getWriter().write("	</form>");
+		response.getWriter().write("	<br>");
+		response.getWriter().write("	<table>");
+		while(cabecalhoHttp.hasMoreElements()) {
+			String cabecalho = cabecalhoHttp.nextElement();
+			String valor = request.getHeader(cabecalho);
+			response.getWriter().write("	<tr>");
+			response.getWriter().write("		<td>");
+			response.getWriter().write("			"+cabecalho);
+			response.getWriter().write("		</td>");
+			response.getWriter().write("	</tr>");
+			response.getWriter().write("	<tr>");
+			response.getWriter().write("		<td>");
+			response.getWriter().write("			"+valor);
+			response.getWriter().write("		</td>");
+			response.getWriter().write("	</tr>");
+		}
+		response.getWriter().write("	</table>");
 		response.getWriter().write("	</body>");
 		response.getWriter().write("</html>");
 	}

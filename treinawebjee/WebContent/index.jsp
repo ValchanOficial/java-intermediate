@@ -8,6 +8,8 @@
 		<title>Java EE</title>
 	</head>
 	<body>
+	<!-- diretiva include -->
+	<%@include file="menu.jsp" %>
 	<!--  declaração -->
 	<%!
 		public String getDataAtual(){

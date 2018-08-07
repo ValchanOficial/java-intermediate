@@ -65,8 +65,6 @@ public class ServletLeitorIdade extends HttpServlet {
 			response.getWriter().write("		<td>");
 			response.getWriter().write("			"+cabecalho);
 			response.getWriter().write("		</td>");
-			response.getWriter().write("	</tr>");
-			response.getWriter().write("	<tr>");
 			response.getWriter().write("		<td>");
 			response.getWriter().write("			"+valor);
 			response.getWriter().write("		</td>");

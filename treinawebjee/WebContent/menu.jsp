@@ -16,6 +16,10 @@
 					break;
 				}
 			}
+			//sessão
+			if(request.getSession().getAttribute("_usuario_")==null){
+				response.sendRedirect("login.jsp");
+			}
 		%>
 		<a href="http://www.google.com.br">Ir ao Google</a> |
 		<a href="http://www.bing.com.br">Ir ao Bing</a> |

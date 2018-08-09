@@ -51,6 +51,8 @@ public class ServletLogin extends HttpServlet {
 			Cookie cookie = new Cookie("_nomeUsuarioConectado",usuario.getNome());
 			cookie.setMaxAge(60*60);//1h
 			response.addCookie(cookie);
+			request.getSession().setAttribute("_usuario_", usuario);
+			//request.getSession().setMaxInactiveInterval(interval);//duração padrão da sessão é 30 minutos
 			response.sendRedirect("index.jsp");
 			}else {
 				response.sendRedirect("loginincorreto.jsp");

@@ -4,119 +4,12 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Java EE</title>
-</head>
-<body>
-	<!-- diretiva include -->
-	<%@include file="menu.jsp"%>
-	<fildset style="width: 200px">
-	<form method="post" action="infoUsuario.jsp">
-		<legend>Informações do usuário</legend>
-		<div style="font-weight: bold">Nome completo:</div>
-		<div>
-			<input type="text" name="nomeCompleto">
-		</div>
-		<div style="font-weight: bold">Nome de usuário:</div>
-		<div>
-			<input type="text" name="nomeUsuario">
-		</div>
-		<div style="font-weight: bold">Senha:</div>
-		<div>
-			<input type="password" name="senha">
-		</div>
-		<div>
-			<input type="submit" valuer="Enviar" />
-		</div>
-	</form>
-	</fildset>
-	<!--  declaração -->
-	<%!public String getDataAtual() {
-		return new Date().toString();
-	}%>
-	<h1>Curso de Java Intermediário</h1>
-	<!-- scriptlets -->
-	<%
-		String mensagem = "";
-		mensagem = "Mensagem com o JSP";
-		out.println(mensagem);
-	%>
-	<!-- expressão -->
-	<p>
-		A data atual é
-		<%=getDataAtual()%></p>
-	<%
-		//executando estuturas de repetição em scriptlet
-		String tabela = "";
-		tabela = "<table>";
-		for (int i = 0; i <= 10; i++) {
-			int resultado = 2 + i;
-			tabela += "<tr>";
-			tabela += "	<td>";
-			tabela += "2 x " + i + " = ";
-			tabela += "	</td>";
-			tabela += "	<td>";
-			tabela += resultado;
-			tabela += "	</td>";
-			tabela += "</tr>";
-		}
-		tabela += "</table>";
-		out.println(tabela);
-	%>
-	<%
-		//executando estruturas de decisão
-		Calendar data = Calendar.getInstance();
-		int hora = data.get(Calendar.HOUR_OF_DAY);
-		if (hora >= 6 && hora <= 12) {
-			out.println("Bom dia!!");
-		} else if (hora > 12 && hora <= 18) {
-			out.println("Boa tarde!!");
-		} else if (hora > 18 && hora <= 24) {
-			out.println("Boa noite!!");
-		} else {
-			out.println("Boa madrugada!!");
-		}
-		//switch
-		int mes = data.get(Calendar.MONTH) + 1;
-		switch (mes) {
-		case 1:
-			out.println("É Janeiro.");
-			break;
-		case 2:
-			out.println("É Fevereiro.");
-			break;
-		case 3:
-			out.println("É Março.");
-			break;
-		case 4:
-			out.println("É Abril.");
-			break;
-		case 5:
-			out.println("É Maio.");
-			break;
-		case 6:
-			out.println("É Junho.");
-			break;
-		case 7:
-			out.println("É Julho.");
-			break;
-		case 8:
-			out.println("É Agosto.");
-			break;
-		case 9:
-			out.println("É Setembro.");
-			break;
-		case 10:
-			out.println("É Outubro.");
-			break;
-		case 11:
-			out.println("É Novembro.");
-			break;
-		case 12:
-			out.println("É Dezembro.");
-			break;
-		}
-	%>
-</body>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Java EE</title>
+	</head>
+	<body>
+		<%@include file="menu.jsp"%>
+		<h2>Bem-vindo(a)!</h2>
+	</body>
 </html>

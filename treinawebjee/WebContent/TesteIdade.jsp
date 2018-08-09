@@ -15,7 +15,7 @@
 				<td><input type="text" name="idade"/></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" valuer="Enviar"/></td>
+				<td colspan="2"><input type="submit" value="Enviar"/></td>
 			</tr>
 		</table>
 	</form>

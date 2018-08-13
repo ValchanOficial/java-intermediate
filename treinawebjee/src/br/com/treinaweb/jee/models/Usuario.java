@@ -3,14 +3,13 @@ package br.com.treinaweb.jee.models;
 import java.io.Serializable;
 
 public class Usuario implements Serializable{
-
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -362450047400737627L;
 	private int id;
 	private String nome;
-	private String usr_nome;
+	private String usr_login;
 	private String usr_senha;
 
 	public int getId() {
@@ -29,19 +28,19 @@ public class Usuario implements Serializable{
 		this.nome = nome;
 	}
 
-	public String getNomeUsuario() {
-		return usr_nome;
+	public String getusr_login() {
+		return usr_login;
 	}
 
-	public void setNomeUsuario(String nomeUsuario) {
-		this.usr_nome = nomeUsuario;
+	public void setusr_login(String nomeUsuario) {
+		this.usr_login = nomeUsuario;
 	}
 
-	public String getSenha() {
+	public String getusr_senha() {
 		return usr_senha;
 	}
 
-	public void setSenha(String senha) {
+	public void setusr_senha(String senha) {
 		this.usr_senha = senha;
 	}
 }

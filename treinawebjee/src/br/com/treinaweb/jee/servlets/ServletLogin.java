@@ -41,11 +41,12 @@ public class ServletLogin extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String usr_login = request.getParameter("usr_login");
+		/*String usr_login = request.getParameter("usr_login");
 		String usr_senha = request.getParameter("usr_senha");
-		Usuario usuario;
+		Usuario usuario;*/
+		Usuario usuario = (Usuario)request.getSession().getAttribute("usuario");
 		try {
-			usuario = UsuarioDAO.autenticar(usr_login, usr_senha);
+			usuario = UsuarioDAO.autenticar(usuario.getusr_login(), usuario.getusr_senha());
 			if(usuario!=null) {
 			contexto.setAttribute("usuarioLogado", usuario);
 			Cookie cookie = new Cookie("_nomeUsuarioConectado",usuario.getNome());

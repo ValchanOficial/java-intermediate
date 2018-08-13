@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-
 import br.com.treinaweb.jee.models.Usuario;
 import br.com.treinaweb.jee.utils.ConexaoUtils;
 
@@ -23,8 +21,8 @@ public class UsuarioDAO {
 			usuario = new Usuario();
 			usuario.setId(rs.getInt("usr_id"));
 			usuario.setNome(rs.getString("nome"));
-			usuario.setNomeUsuario(rs.getString("usr_login"));
-			usuario.setSenha(rs.getString("usr_senha"));
+			usuario.setusr_login(rs.getString("usr_login"));
+			usuario.setusr_senha(rs.getString("usr_senha"));
 		}
 		ConexaoUtils.fecharConexao(conn);
 		statement.close();

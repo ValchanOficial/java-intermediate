@@ -5,7 +5,7 @@
 Curso da [TreinaWeb](https://www.treinaweb.com.br/): Java Intermediário.
 
  - Introdução ao Java EE;
- - [Tomcat v8.5](http://tomcat.apache.org/);
+ - [Tomcat 9](http://tomcat.apache.org/);
  - Protocolo HTTP;
  - JSP (JavaServer Pages);
  - Servlets;

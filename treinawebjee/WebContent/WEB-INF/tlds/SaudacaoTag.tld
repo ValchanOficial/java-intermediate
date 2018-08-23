@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schameLocation="http://java.sun.com/xml/ns/javaee ~CCC http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_1.xsd"
+	version="2.1">
+	<description>Tag para definicao de saudacao</description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>saudacao</short-name>
+		<tag>
+			<description>Exibe a saudacao de acordo com a hora atual</description>
+			<display-name>saudacao</display-name>
+			<name>saudacao</name>
+			<tag-class>br.com.treinaweb.jee.tags.SaudacaoTag</tag-class>
+			<body-content>scriptless</body-content>
+			<attribute>
+				<name>nome</name>
+				<type>java.lang.String</type>
+				<rtexprvalue>true</rtexprvalue>
+			</attribute>
+		</tag>
+</taglib>

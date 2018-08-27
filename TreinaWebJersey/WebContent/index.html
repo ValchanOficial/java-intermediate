@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	</head>
+	<body>
+	<h2>Lista de Tipos de Produto</h2><br>
+	<br>
+	<a href="novoTipoProduto.html">Cadastrar novo tipo produto</a>
+	<table id="tblTiposProduto">
+		<thead>
+			<tr>
+				<td>ID do tipo de produto</td>
+				<td>Nome do tipo de produto</td>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$.ajax({
+				url: "api/tipoproduto/all",
+				method: "GET",
+				success: function(data){
+					$.each(data, function(index, tipoProduto){
+						$("#tblTiposProduto tbody").append(
+								"<tr>"+
+								"	<td>"+
+								"		" + tipoProduto.id +  
+								"	</td>"+
+								"	<td>"+
+								"		" + tipoProduto.nome +  
+								"	</td>"+								
+								"</tr>"
+						);
+					});
+				},
+				error: function(data){
+					alert("Não foi possível ler os tipos de produto.");
+				}
+			});
+		});
+	</script>
+	</body>
+</html>

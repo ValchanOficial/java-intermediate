@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	</head>
+	<body>
+		<h2>Novo tipo de produto</h2>
+		<form id="frmNovoTipoProduto">
+			<label>Nome do novo tipo de produto</label>
+			<input type="text" name="nomeTipoProduto" />
+			<input type="submit" value="Gravar" />
+		</form>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#frmNovoTipoProduto").submit(function(e){
+					e.preventDefault();
+					var formData = $("#frmNovoTipoProduto").serialize();
+					$.ajax({
+						url: "api/tipoproduto/new",
+						method: "POST",
+						data: formData,
+						success: function(data){
+							window.location = "index.html";
+						},
+						error: function(data){
+							alert("Não foi possível criar o novo tipo de produto.");
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
